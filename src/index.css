@@ -1,0 +1,72 @@
+:root {
+	--app-background-stripe: #009688;
+	--shadow-rgb: 0, 0, 0;
+	--panel-background-lighter: #f7f7f7;
+}
+
+@media all {
+	html, body, #app {
+		height: 100%;
+		width: 100%;
+		overflow: hidden;
+		padding: 0;
+		margin: 0;
+	}
+	
+	#app {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	
+	.app__wrapper {
+		position: relative;
+		z-index: 100;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+	
+	.app__content {
+		left: 0;
+		position: relative;
+		top: 0;
+		display: flex;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		background-position: 0 0;
+		background-color: var(--panel-background-lighter);
+		background-repeat: repeat-x;
+		border-radius: 0;
+		transform-origin: center;
+		animation: _2rw5W .3s cubic-bezier(.1, .82, .25, 1);
+	}
+}
+
+@media screen and (min-width: 1441px) {
+	.app__wrapper:after {
+		left: 0;
+		background-color: var(--app-background-stripe);
+		position: fixed;
+		top: 0;
+		z-index: -1;
+		width: 100%;
+		height: 127px;
+		content: "";
+	}
+	
+	.app__content {
+		margin: 0 auto;
+		box-shadow: 0 1px 1px 0 rgba(var(--shadow-rgb), .06), 0 2px 5px 0 rgba(var(--shadow-rgb), .2);
+		top: 19px;
+		width: 1396px;
+		height: calc(100% - 38px);
+	}
+}
+
+@media screen and (max-height: 500px) {
+	.app__content {
+		min-height: 500px;
+	}
+}
