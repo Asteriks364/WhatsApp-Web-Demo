@@ -2,6 +2,9 @@
 	--app-background-stripe: #009688;
 	--shadow-rgb: 0, 0, 0;
 	--panel-background-lighter: #f7f7f7;
+	--panel-header-background: #ededed;
+	--panel-header-icon: #919191;
+	--avatar-background: #e6e6e6;
 }
 
 @media all {
@@ -11,6 +14,10 @@
 		overflow: hidden;
 		padding: 0;
 		margin: 0;
+	}
+	
+	[role=button] {
+		cursor: pointer;
 	}
 	
 	#app {
