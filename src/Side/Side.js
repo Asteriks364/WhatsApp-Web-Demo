@@ -1,24 +1,14 @@
 import React from 'react';
 import Header from './Header'
+import Search from './Search'
+import Panel from './Panel'
 
-const Search = () => (
-  <div className="side__search">
-
-  </div>
-);
-
-const Panel = () => (
-  <div className="side__panel">
-
-  </div>
-);
-
-const Side = () => (
-  <div className="side">
-	  <Header/>
-	  <Search/>
-	  <Panel/>
-  </div>
-);
-
-export default Side;
+export default function Side() {
+	return (
+		<div className="side">
+			<Header/>
+			<Search/>
+			<Panel/>
+		</div>
+	);
+};

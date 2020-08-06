@@ -1,31 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-class Link extends React.Component {
-	state = {
-		isOpen: false
+function Link({title, icon}) {
+	const [isOpen, setOpen] = useState(false);
+
+	const clickLink = () => {
+		setOpen(!isOpen);
+		alert(!isOpen ? 'открыть ' + title : 'закрыть ' + title);
 	};
 
-	clickLink = () => {
-		this.setState((state) => {
-			return {
-				isOpen: !state.isOpen
-			};
-		});
-	};
-
-	render() {
-		return (
-		  <div className={`link ${this.state.isOpen ? 'link_active' : ''}`}>
-			  <div role="button"
-			       title={this.props.title}
-			       onClick={this.clickLink}>
-					  <span>
-						  {this.props.children}
-					  </span>
-			  </div>
-		  </div>
-		);
-	}
+	return (
+		<div className={`link ${isOpen ? 'link_active' : ''}`}>
+			<div role="button"
+			     title={title}
+			     onClick={clickLink}>
+				<span>{icon}</span>
+			</div>
+		</div>
+	);
 }
 
 export default Link;
