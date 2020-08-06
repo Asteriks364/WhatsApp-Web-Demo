@@ -520,6 +520,18 @@
 		background-image: linear-gradient(180deg, #dddbd1, #d2dbdc);
 	}
 	
+	::-webkit-scrollbar {
+		width: 6px;
+	}
+	
+	::-webkit-scrollbar-track {
+		background: transparent;
+	}
+	
+	::-webkit-scrollbar-thumb {
+		background: #ccc;
+	}
+	
 	[role=button] {
 		cursor: pointer;
 	}
@@ -560,6 +572,13 @@
 		border-radius: 0;
 		transform-origin: center;
 		animation: _2rw5W .3s cubic-bezier(.1, .82, .25, 1);
+	}
+	
+	.selectable-text {
+		-webkit-user-select: text;
+		-moz-user-select: text;
+		-ms-user-select: text;
+		user-select: text;
 	}
 }
 

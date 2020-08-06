@@ -26,7 +26,7 @@ function Search() {
 				  </span>
 				</div>
 			</button>
-			<div className="search__placeholder">Поиск или новый чат</div>
+			<div className="search__placeholder selectable-text">Поиск или новый чат</div>
 			<label className="search__label">
 				<input type="text"
 				       className="search__input"

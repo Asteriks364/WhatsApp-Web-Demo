@@ -1,8 +1,7 @@
 import React from 'react';
-import Side from './Side/Side'
-import Content from "./Content/Content";
-import './Side/Side.css'
-import './Content/Content.css'
+import Side from './Side'
+import Content from "./Content";
+import './App.css'
 
 export default function App() {
 	return (

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import User from '../components/User'
-import Link from '../components/Link'
-import Chat from "../components/Chat";
+import Header from './components/Header'
+import Search from './components/Search'
+import ChatList from './ChatList'
 
 const iconStatus = () => (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -24,10 +24,9 @@ const iconMenu = () => (
 	</svg>
 );
 
-export default function Header() {
+export default function Side() {
 	const [user, setUser] = useState({
 		avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/themikenagle/128.jpg",
-		name: "Анатолий"
 	});
 
 	const [links, setLinks] = useState([
@@ -46,11 +45,10 @@ export default function Header() {
 	]);
 
 	return (
-		<header className="side__header">
-			<User user={user} size='small'/>
-			<div className="link-block">
-				{links.map((link, index) => <Link key={index} title={link.title} icon={link.icon}></Link>)}
-			</div>
-		</header>
+		<div className="side">
+			<Header user={user} links={links}/>
+			<Search/>
+			<ChatList/>
+		</div>
 	);
 };
