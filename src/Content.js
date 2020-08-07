@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Header from './components/Header'
 import ChatWindow from './ChatWindow'
+import Footer from './Footer'
 
 const iconSearch = () => (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -53,6 +54,12 @@ export default function Content() {
 			},
 			{
 				text: lorem.substr(0, randomInteger(10, 100)),
+				type: 'in',
+				time: '20:09',
+				isRead: true
+			},
+			{
+				text: lorem.substr(0, randomInteger(10, 100)),
 				type: 'out',
 				time: '20:10',
 				isRead: false
@@ -80,6 +87,7 @@ export default function Content() {
 			        userPrors={true}
 			        links={links}/>
 			<ChatWindow messages={messages}/>
+			<Footer/>
 		</div>
 	);
 }

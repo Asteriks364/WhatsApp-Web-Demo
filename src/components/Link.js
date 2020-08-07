@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 
-function Link({title, icon}) {
+export default function Link({title, icon, onClick}) {
 	const [isOpen, setOpen] = useState(false);
 
 	const clickLink = () => {
+		if (onClick) return onClick();
 		setOpen(!isOpen);
 		alert(!isOpen ? 'открыть ' + title : 'закрыть ' + title);
 	};
@@ -18,5 +19,3 @@ function Link({title, icon}) {
 		</div>
 	);
 }
-
-export default Link;

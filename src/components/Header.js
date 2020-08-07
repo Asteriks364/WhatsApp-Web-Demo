@@ -24,7 +24,7 @@ export default function Header({user, userPrors = false, links}) {
 			</div>
 
 			<div className="link-block">
-				{links.map((link, index) => <Link key={index} title={link.title} icon={link.icon}></Link>)}
+				{links.map((link, index) => <Link key={index} title={link.title} icon={link.icon}/>)}
 			</div>
 		</header>
 	);

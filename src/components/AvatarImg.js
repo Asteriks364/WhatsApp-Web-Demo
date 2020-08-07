@@ -15,9 +15,9 @@ const ImgDefault = () => (
 
 export default function AvatarImg({avatar, size}) {
 	return (
-		<div className={`avatar ${size == 'small' ? 'avatar_small' : (size == 'big' ? 'avatar_big' : '')}`}>
+		<div className={`avatar ${size === 'small' ? 'avatar_small' : (size === 'big' ? 'avatar_big' : '')}`}>
 			{avatar ? (
-				<img alt="avatar image" src={avatar} className='avatar__img'/>
+				<img alt="avatar" src={avatar} className='avatar__img'/>
 			) : (
 				<ImgDefault/>
 			)}
