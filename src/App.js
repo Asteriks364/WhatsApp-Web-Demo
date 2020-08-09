@@ -38,7 +38,7 @@ export default function App() {
 
 		const arDate = [formatData(date.getHours()), formatData(date.getMinutes())];
 
-		setChats(chats.map(chat => {
+		let newChats = chats.map(chat => {
 			if (chat.id === id) {
 				chat.messages.push(
 					{
@@ -50,7 +50,9 @@ export default function App() {
 				);
 			}
 			return chat;
-		}));
+		});
+
+		setChats(newChats.filter(chat => chat.id === id).concat(chats.filter(chat => chat.id !== id)));
 		setChatOpened(chats.filter(chat => chat.isOpen));
 	};
 
