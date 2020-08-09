@@ -1,4 +1,4 @@
-import {randomInteger, randomText} from "./randomText";
+import {randomInteger, randomText} from "./random";
 import icons from "./icons";
 
 const state = {
@@ -923,23 +923,23 @@ const state = {
 	links: {
 		status: {
 			title: 'Статус',
-			icon: icons.iconStatus(),
+			icon: icons.status(),
 		},
 		newChat: {
 			title: 'Новый чат',
-			icon: icons.iconNewChat(),
+			icon: icons.newChat(),
 		},
 		menu: {
 			title: 'Меню',
-			icon: icons.iconMenu(),
+			icon: icons.menu(),
 		},
 		search: {
 			title: 'Поиск...',
-			icon: icons.iconSearch(),
+			icon: icons.search(),
 		},
 		attach: {
 			title: 'Приложить',
-			icon: icons.iconAttach(),
+			icon: icons.attach(),
 		},
 	}
 };
