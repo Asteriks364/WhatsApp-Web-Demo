@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import {Context} from '../context';
+import icons from "../icons";
 import AvatarImg from "./AvatarImg";
 
 export default function Chat({chat}) {
@@ -17,9 +18,16 @@ export default function Chat({chat}) {
 						<div className="chat__top-info-wrap">
 							<span title={chat.user.name} className="user__name">{chat.user.name}</span>
 						</div>
-						<div className="chat__time-last-message">{chat.messages.time}</div>
+						<div className="chat__time-last-message">{chat.messages[chat.messages.length - 1].time}</div>
 					</div>
 					<div className="chat__last-message">
+						{
+							chat.messages[chat.messages.length - 1].type === 'out' &&
+							<div
+								className={`message__status ${chat.messages[chat.messages.length - 1].isRead ? 'message__status_read' : ''}`}>
+								{icons.statusMessage()}
+							</div>
+						}
 						<span className="chat__last-message-text">{chat.messages[chat.messages.length - 1].text}</span>
 					</div>
 				</div>

@@ -4,13 +4,13 @@ import Message from './components/Message'
 
 export default function ChatWindow() {
 	const {chatOpened} = useContext(Context);
-	const arMessageLength = chatOpened[0].messages.length;
+	const messages = chatOpened[0].messages;
 
 	const messagesEndRef = useRef(null);
 
 	useEffect(() => {
 		messagesEndRef.current.scrollIntoView({block: "end"});
-	}, [arMessageLength]);
+	}, [messages, messages.length]);
 
 	return (
 		<div className="chat-window">

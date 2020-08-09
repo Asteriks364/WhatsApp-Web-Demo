@@ -362,8 +362,18 @@
 		min-height: 20px;
 		color: var(--secondary);
 		font-size: 13px;
-		line-height: 20px;
 		margin-top: 2px;
+	}
+	
+	.chat__last-message .message__status {
+		margin: 0;
+		margin-right: 2px;
+		height: 18px;
+	}
+	
+	.chat__last-message svg {
+		height: 18px;
+		width: 18px;
 	}
 	
 	.chat_open .chat__last-message {
@@ -538,6 +548,43 @@
 @media screen and (min-width: 1301px) {
 	.message__wrap {
 		max-width: 65%;
+	}
+}
+
+@media (max-width: 1024px) {
+	.message {
+		padding-right: 7%;
+		padding-left: 7%;
+	}
+}
+
+@media (max-width: 968px) {
+	.message {
+		padding-right: 6.5%;
+		padding-left: 6.5%;
+	}
+}
+
+@media (max-width: 912px) {
+	.message {
+		padding-right: 6%;
+		padding-left: 6%;
+	}
+}
+
+@media (max-width: 856px) {
+	.message {
+		padding-right: 5.5%;
+		padding-left: 5.5%;
+	}
+}
+
+n
+
+@media (max-width: 800px) {
+	.message {
+		padding-right: 5%;
+		padding-left: 5%;
 	}
 }
 

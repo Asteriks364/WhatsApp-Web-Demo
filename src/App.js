@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Context} from './context';
 import state from './state';
 import './App.css'
@@ -7,13 +7,26 @@ import Content from "./Content";
 
 export default function App() {
 	const [chats, setChats] = useState(state.chats);
-	const chatOpened = state.chats.filter(chat => chat.isOpen);
+	const [chatOpened, setChatOpened] = useState(state.chats.filter(chat => chat.isOpen));
+
+	useEffect(() => {
+		const raw = localStorage.getItem('chats');
+		if (raw) {
+			setChats(JSON.parse(raw));
+			setChatOpened(chats.filter(chat => chat.isOpen))
+		}
+	}, []);
+
+	useEffect(() => {
+		localStorage.setItem('chats', JSON.stringify(chats));
+	}, [chatOpened]);
 
 	const openChat = id => {
 		setChats(chats.map(chat => {
 			(chat.id === id) ? chat.isOpen = true : chat.isOpen = false;
 			return chat;
-		}))
+		}));
+		setChatOpened(chats.filter(chat => chat.isOpen))
 	};
 
 	const sendMessageChat = (id, message) => {
@@ -37,7 +50,8 @@ export default function App() {
 				);
 			}
 			return chat;
-		}))
+		}));
+		setChatOpened(chats.filter(chat => chat.isOpen));
 	};
 
 	return (
