@@ -9,7 +9,6 @@ export default function Header({user, userPrors = false, links}) {
 
 	return (
 		<header className="header">
-
 			<div className="user"
 			     role="button"
 			     onClick={openUserCard}>
@@ -22,7 +21,6 @@ export default function Header({user, userPrors = false, links}) {
 					<span title={user.lastVisit} className="user__visit">был(-а) {user.lastVisit}</span>
 				</div>}
 			</div>
-
 			<div className="link-block">
 				{links.map((link, index) => <Link key={index} title={link.title} icon={link.icon}/>)}
 			</div>
