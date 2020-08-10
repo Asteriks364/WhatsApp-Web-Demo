@@ -8,7 +8,7 @@ export default function Footer() {
 	const [message, setMessage] = useState();
 
 	const sendMessage = event => {
-		if (event && event.key !== 'Enter') return;
+		if ((event && event.key !== 'Enter') || !message) return;
 		sendMessageChat(chatOpened[0].id, message);
 		setMessage('');
 	};
