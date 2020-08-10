@@ -32,7 +32,7 @@ const contentOverlay = () => (
 	</div>
 );
 
-export default function Content() {
+export function Content() {
 	const {chatOpened} = useContext(Context);
 
 	const links = [

@@ -54,7 +54,8 @@ const state = {
 			"type": "in",
 			"time": "16:22",
 			"isRead": true
-		}, {"text": "Lorem ipsum dolor sit amet, co", "type": "out", "time": "02:34", "isRead": 0}]
+		}, {"text": "Lorem ipsum dolor sit amet, co", "type": "out", "time": "02:34", "isRead": 0}],
+		"newMessage": ""
 	}, {
 		"id": 2,
 		"user": {
@@ -143,7 +144,8 @@ const state = {
 			"type": "out",
 			"time": "05:52",
 			"isRead": true
-		}, {"text": "Lorem ipsum dolo", "type": "out", "time": "20:10", "isRead": false}]
+		}, {"text": "Lorem ipsum dolo", "type": "out", "time": "20:10", "isRead": false}],
+		"newMessage": ""
 	}, {
 		"id": 3,
 		"user": {
@@ -162,7 +164,8 @@ const state = {
 			"type": "in",
 			"time": "00:04",
 			"isRead": true
-		}, {"text": "Lorem ipsum dolor", "type": "out", "time": "08:22", "isRead": true}]
+		}, {"text": "Lorem ipsum dolor", "type": "out", "time": "08:22", "isRead": true}],
+		"newMessage": ""
 	}, {
 		"id": 4,
 		"user": {"name": "Hank Green", "avatar": "", "lastVisit": "вчера в 20:10"},
@@ -191,7 +194,8 @@ const state = {
 				"time": "01:56",
 				"isRead": true
 			},
-			{"text": "Lorem ipsum dolor sit amet, consectetur ", "type": "out", "time": "13:12", "isRead": true}]
+			{"text": "Lorem ipsum dolor sit amet, consectetur ", "type": "out", "time": "13:12", "isRead": true}],
+		"newMessage": ""
 	}, {
 		"id": 5,
 		"user": {
@@ -240,7 +244,8 @@ const state = {
 			"type": "in",
 			"time": "23:14",
 			"isRead": false
-		}]
+		}],
+		"newMessage": ""
 	}, {
 		"id": 6,
 		"user": {"name": "Jed", "avatar": "", "lastVisit": "вчера в 20:10"},
@@ -250,7 +255,8 @@ const state = {
 			"type": "in",
 			"time": "20:10",
 			"isRead": false
-		}]
+		}],
+		"newMessage": ""
 	}, {
 		"id": 7,
 		"user": {
@@ -314,7 +320,8 @@ const state = {
 			"type": "out",
 			"time": "21:37",
 			"isRead": true
-		}, {"text": "Lorem ipsum dolor sit amet, consectetur adipi", "type": "in", "time": "20:10", "isRead": false}]
+		}, {"text": "Lorem ipsum dolor sit amet, consectetur adipi", "type": "in", "time": "20:10", "isRead": false}],
+		"newMessage": ""
 	}, {
 		"id": 8,
 		"user": {"name": "Alysa Kautzer IV", "avatar": "", "lastVisit": "вчера в 20:10"},
@@ -354,7 +361,8 @@ const state = {
 			"type": "in",
 			"time": "22:40",
 			"isRead": true
-		}, {"text": "Lorem ipsum dolor sit ", "type": "in", "time": "15:25", "isRead": false}]
+		}, {"text": "Lorem ipsum dolor sit ", "type": "in", "time": "15:25", "isRead": false}],
+		"newMessage": ""
 	}, {
 		"id": 9,
 		"user": {
@@ -448,7 +456,8 @@ const state = {
 			"type": "out",
 			"time": "02:05",
 			"isRead": true
-		}, {"text": "Lorem ipsum dolor sit amet, consectetur ad", "type": "out", "time": "20:10", "isRead": false}]
+		}, {"text": "Lorem ipsum dolor sit amet, consectetur ad", "type": "out", "time": "20:10", "isRead": false}],
+		"newMessage": ""
 	}, {
 		"id": 10,
 		"user": {
@@ -462,7 +471,8 @@ const state = {
 			"type": "out",
 			"time": "10:10",
 			"isRead": false
-		}]
+		}],
+		"newMessage": ""
 	}, {
 		"id": 11,
 		"user": {
@@ -495,7 +505,8 @@ const state = {
 				"type": "out",
 				"time": "22:10",
 				"isRead": true
-			}]
+			}],
+		"newMessage": ""
 	}],
 	user: {
 		avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/themikenagle/128.jpg",

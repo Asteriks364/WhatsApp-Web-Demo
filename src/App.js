@@ -1,14 +1,18 @@
 import React, {useEffect, useState} from 'react';
 import {Context} from './context';
 import state from './state';
-import './App.css'
-import Side from './Side'
-import Content from "./Content";
 
-export default function App() {
+import {Side} from './Side'
+import {Content} from "./Content";
+import './App.css'
+
+export function App() {
+	/* Список чатов */
 	const [chats, setChats] = useState(state.chats);
+	/* Открытый чат */
 	const [chatOpened, setChatOpened] = useState(state.chats.filter(chat => chat.isOpen));
 
+	/* Запись в объект чатов из localStorage */
 	useEffect(() => {
 		const raw = localStorage.getItem('chats');
 		if (raw) {
@@ -17,10 +21,12 @@ export default function App() {
 		}
 	}, []);
 
+	/* Запись объекта чатов в localStorage */
 	useEffect(() => {
 		localStorage.setItem('chats', JSON.stringify(chats));
-	}, [chatOpened]);
+	}, [chats]);
 
+	/* Открытие чата по клику в списке чатов */
 	const openChat = id => {
 		setChats(chats.map(chat => {
 			(chat.id === id) ? chat.isOpen = true : chat.isOpen = false;
@@ -29,6 +35,17 @@ export default function App() {
 		setChatOpened(chats.filter(chat => chat.isOpen))
 	};
 
+	/* Ввод текста в поле отправки сообщения */
+	const writeNewMessageChat = (id, message) => {
+		setChats(chats.map(chat => {
+			if (chat.id === id) {
+				chat.newMessage = message;
+			}
+			return chat;
+		}));
+	};
+
+	/* Отправка сообщения */
 	const sendMessageChat = (id, message) => {
 		const date = new Date();
 
@@ -53,12 +70,11 @@ export default function App() {
 		});
 
 		setChats(newChats.filter(chat => chat.id === id).concat(chats.filter(chat => chat.id !== id)));
-		setChatOpened(chats.filter(chat => chat.isOpen));
 	};
 
 	return (
 		<Context.Provider value={{
-			chats, chatOpened, openChat, sendMessageChat
+			chats, chatOpened, openChat, sendMessageChat, writeNewMessageChat
 		}}>
 			<div className="app__wrapper">
 				<div className="app__content">
