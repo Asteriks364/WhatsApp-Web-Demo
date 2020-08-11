@@ -1,14 +1,22 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {Context} from './context';
 import icons from './icons'
 import Link from "./components/Link";
 
 export default function Footer() {
-	const {chatOpened, sendMessageChat} = useContext(Context);
-	const [message, setMessage] = useState();
+	const {chatOpened, sendMessageChat, writeNewMessageChat} = useContext(Context);
+	const [message, setMessage] = useState(chatOpened[0].newMessage);
+
+	useEffect(() => {
+		writeNewMessageChat(chatOpened[0].id, message);
+	}, [message]);
+
+	useEffect(() => {
+		setMessage(chatOpened[0].newMessage);
+	}, [chatOpened]);
 
 	const sendMessage = event => {
-		if (event && event.key !== 'Enter') return;
+		if ((event && event.key !== 'Enter') || !message) return;
 		sendMessageChat(chatOpened[0].id, message);
 		setMessage('');
 	};

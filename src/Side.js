@@ -4,7 +4,7 @@ import Header from './components/Header'
 import Search from './components/Search'
 import ChatList from './ChatList'
 
-export default function Side() {
+export function Side() {
 	const links = [
 		state.links.status,
 		state.links.newChat,
