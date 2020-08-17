@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import '../css/Link.css';
+import './Link.css';
 
 export default function Link({ title, icon, onClick }) {
   const [isOpen, setOpen] = useState(false);

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import '../css/Search.css';
+import './Search.css';
 
 export default function Search() {
   const [isFocus, setIsFocus] = useState(false);

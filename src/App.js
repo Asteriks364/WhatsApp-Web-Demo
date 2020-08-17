@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Context from './context/context';
 import { arChats } from './state/chats';
 
-import Side from './components/Side';
-import Content from './components/Content';
+import Side from './components/Side/Side';
+import Content from './components/Content/Content';
 import './App.css';
 
 export default function App() {

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Link from '../components/Link';
-import AvatarImg from './AvatarImg';
-import '../css/Header.css';
+import Link from '../Link/Link';
+import AvatarImg from '../AvatarImg/AvatarImg';
+import './Header.css';
 
 export default function Header({ user, userPrors = false, links }) {
   const openUserCard = () => {

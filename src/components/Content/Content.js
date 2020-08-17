@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
-import Context from '../context/context';
-import { links } from '../state/links';
+import Context from '../../context/context';
+import { links } from '../../state/links';
 
-import Header from './Header';
-import ChatWindow from './ChatWindow';
-import Footer from './Footer';
-import '../css/Content.css';
+import Header from '../Header/Header';
+import ChatWindow from '../ChatWindow/ChatWindow';
+import Footer from '../Footer/Footer';
+import './Content.css';
 
 const contentOverlay = () => (
   <div className="content__overlay">

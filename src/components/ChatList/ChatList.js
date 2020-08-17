@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import Context from '../context/context';
+import Context from '../../context/context';
 
-import Chat from './Chat';
-import '../css/ChatList.css';
+import Chat from '../Chat/Chat';
+import './ChatList.css';
 
 export default function ChatList() {
   const { chats } = useContext(Context);

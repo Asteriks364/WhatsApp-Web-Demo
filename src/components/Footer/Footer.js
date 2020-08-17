@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Context from '../context/context';
+import Context from '../../context/context';
 
-import { emojiIcon, sendIcon, voiceIcon } from './Icons';
-import Link from './Link';
-import '../css/Footer.css';
+import { emojiIcon, sendIcon, voiceIcon } from '../Icons/Icons';
+import Link from '../Link/Link';
+import './Footer.css';
 
 export default function Footer() {
   const { chatOpened, sendMessageChat, writeNewMessageChat } = useContext(Context);

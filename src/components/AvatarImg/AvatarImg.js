@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../css/AvatarImg.css';
+import './AvatarImg.css';
 
 const ImgDefault = () => (
   <div className="avatar__img avatar-img_default">

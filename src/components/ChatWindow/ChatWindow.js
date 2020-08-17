@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useRef } from 'react';
-import Context from '../context/context';
+import Context from '../../context/context';
 
-import Message from './Message';
-import '../css/ChatWindow.css';
+import Message from '../Message/Message';
+import './ChatWindow.css';
 
 export default function ChatWindow() {
   const { chatOpened } = useContext(Context);

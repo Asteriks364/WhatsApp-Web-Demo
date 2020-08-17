@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import Context from '../context/context';
-import { statusMessageIcon } from './Icons';
+import Context from '../../context/context';
+import { statusMessageIcon } from '../Icons/Icons';
 
-import AvatarImg from './AvatarImg';
-import '../css/Chat.css';
+import AvatarImg from '../AvatarImg/AvatarImg';
+import './Chat.css';
 
 export default function Chat({ chat }) {
   const { openChat } = useContext(Context);
