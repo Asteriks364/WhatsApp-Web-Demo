@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Context from '../../context/context';
-import { statusMessageIcon } from '../Icons/Icons';
+import { statusMessageIcon } from '../Icons/statusMessageIcon';
 
 import AvatarImg from '../AvatarImg/AvatarImg';
 import './Chat.css';

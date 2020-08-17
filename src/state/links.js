@@ -1,10 +1,8 @@
-import {
-  statusIcon,
-  newChatIcon,
-  menuIcon,
-  searchIcon,
-  attachIcon,
-} from '../components/Icons/Icons';
+import { statusIcon } from '../components/Icons/statusIcon';
+import { newChatIcon } from '../components/Icons/newChatIcon';
+import { menuIcon } from '../components/Icons/menuIcon';
+import { searchIcon } from '../components/Icons/searchIcon';
+import { attachIcon } from '../components/Icons/attachIcon';
 
 export const links = {
   status: {

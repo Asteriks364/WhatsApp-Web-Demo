@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { statusMessageIcon, tailInIcon, tailOutIcon } from '../Icons/Icons';
+import { statusMessageIcon } from '../Icons/statusMessageIcon';
+import { tailInIcon } from '../Icons/tailInIcon';
+import { tailOutIcon } from '../Icons/tailOutIcon';
 import './Message.css';
 
 export default function Message({ message }) {

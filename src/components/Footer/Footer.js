@@ -1,7 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Context from '../../context/context';
 
-import { emojiIcon, sendIcon, voiceIcon } from '../Icons/Icons';
+import { emojiIcon } from '../Icons/emojiIcon';
+import { sendIcon } from '../Icons/sendIcon';
+import { voiceIcon } from '../Icons/voiceIcon';
 import Link from '../Link/Link';
 import './Footer.css';
 
