@@ -1,0 +1,30 @@
+@media all {
+	.chat-list {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		margin-top: -1px;
+		background-color: var(--background-default);
+		overflow-y: auto;
+		z-index: 1;
+	}
+	
+	.item-enter {
+		opacity: 0;
+	}
+	
+	.item-enter-active {
+		opacity: 1;
+		transition: opacity 5000ms ease-in;
+	}
+	
+	.item-exit {
+		opacity: 1;
+	}
+	
+	.item-exit-active {
+		opacity: 0;
+		transition: opacity 5000ms ease-in;
+	}
+}
