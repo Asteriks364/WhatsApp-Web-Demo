@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import Context from './context/context';
 import { arChats } from './state/chats';
+import { arContacts } from './state/contacts';
 
 import Side from './components/Side/Side';
 import Content from './components/Content/Content';
@@ -9,6 +10,9 @@ import './App.css';
 export default function App() {
   /* Список чатов */
   const [chats, setChats] = useState(arChats);
+
+  /* Список контактов */
+  const [contacts, setContacts] = useState(arContacts);
 
   /* Открытый чат */
   let chatOpened = useMemo(() => chats.filter((chat) => chat.isOpen), [chats]);
@@ -87,6 +91,7 @@ export default function App() {
   return (
     <Context.Provider
       value={{
+        contacts,
         chats,
         openedChatID,
         openChat,

@@ -5,20 +5,20 @@ import { statusMessageIcon } from '../Icons/statusMessageIcon';
 import AvatarImg from '../AvatarImg/AvatarImg';
 import './Chat.css';
 
-export default function Chat({ chat }) {
+export default function Chat({ contact, chat }) {
   const { openChat } = useContext(Context);
 
   return (
     <div className={`chat ${chat.isOpen ? 'chat_open' : ''}`} onClick={() => openChat(chat.id)}>
       <div className="chat__user" title={chat.messages[chat.messages.length - 1].text}>
         <div className="chat__avatar">
-          <AvatarImg avatar={chat.user.avatar} />
+          <AvatarImg avatar={contact.avatar} />
         </div>
         <div className="chat__info">
           <div className="chat__top-info">
             <div className="chat__top-info-wrap">
-              <span title={chat.user.name} className="chat__user-name">
-                {chat.user.name}
+              <span title={contact.name} className="chat__user-name">
+                {contact.name}
               </span>
             </div>
             <div className="chat__time-last-message">
