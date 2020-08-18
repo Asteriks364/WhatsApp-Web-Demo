@@ -5,9 +5,9 @@ import Message from '../Message/Message';
 import './ChatWindow.css';
 
 export default function ChatWindow() {
-  const { chatOpened } = useContext(Context);
-  const messages = chatOpened[0].messages;
+  const { chats, openedChatID } = useContext(Context);
 
+  const messages = chats.find((chat) => chat.id === openedChatID).messages;
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function ChatWindow() {
       <div className="chat-window__wrap" id="block">
         <div className="chat-window__indent" />
         <div className="chat-window__list">
-          {chatOpened[0].messages.map((message, index) => (
+          {messages.map((message, index) => (
             <Message key={index} message={message} />
           ))}
         </div>

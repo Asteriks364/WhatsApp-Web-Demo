@@ -41,17 +41,21 @@ const contentOverlay = () => (
 );
 
 export default function Content() {
-  const { chatOpened } = useContext(Context);
+  const { chats, openedChatID } = useContext(Context);
 
   const arLinks = [links.search, links.attach, links.menu];
 
   return (
     <div className="content">
-      {chatOpened.length === 0 ? (
+      {!openedChatID ? (
         contentOverlay()
       ) : (
         <div className="content__wrap content__wrap_open">
-          <Header user={chatOpened[0].user} userPrors={true} links={arLinks} />
+          <Header
+            user={chats.find((chat) => chat.id === openedChatID).user}
+            userPrors={true}
+            links={arLinks}
+          />
           <ChatWindow />
           <Footer />
         </div>
