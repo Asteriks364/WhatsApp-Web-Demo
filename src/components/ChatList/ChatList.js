@@ -6,14 +6,14 @@ import Chat from '../Chat/Chat';
 import './ChatList.css';
 
 export default function ChatList() {
-  const { chats } = useContext(Context);
+  const { contacts, chats } = useContext(Context);
 
   return (
     <div className="chat-list">
       <TransitionGroup>
-        {chats.map((chat) => (
-          <CSSTransition key={chat.id} timeout={5000} classNames="item">
-            <Chat chat={chat} />
+        {contacts.map((contact) => (
+          <CSSTransition key={contact.id} timeout={5000} classNames="item">
+            <Chat chat={chats.find((chat) => contact.id === chat.id)} contact={contact} />
           </CSSTransition>
         ))}
       </TransitionGroup>

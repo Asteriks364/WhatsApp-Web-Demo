@@ -8,21 +8,24 @@ import Link from '../Link/Link';
 import './Footer.css';
 
 export default function Footer() {
-  const { chatOpened, sendMessageChat, writeNewMessageChat } = useContext(Context);
-  const [message, setMessage] = useState(chatOpened[0].newMessage);
+  const { chats, openedChatID, sendMessageChat, writeNewMessageChat } = useContext(Context);
+
+  const newMessage = chats.find((chat) => chat.id === openedChatID).newMessage;
+  const [message, setMessage] = useState(newMessage);
 
   useEffect(() => {
-    writeNewMessageChat(chatOpened[0].id, message);
+    writeNewMessageChat(message);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [message]);
 
   useEffect(() => {
-    setMessage(chatOpened[0].newMessage);
-  }, [chatOpened]);
+    setMessage(newMessage);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [openedChatID]);
 
   const sendMessage = (event) => {
     if ((event && event.key !== 'Enter') || !message) return;
-    sendMessageChat(chatOpened[0].id, message);
+    sendMessageChat(message);
     setMessage('');
   };
 
