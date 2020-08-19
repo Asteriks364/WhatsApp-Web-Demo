@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { user } from '../../state/user';
 import { links } from '../../state/links';
 
@@ -9,12 +9,13 @@ import './Side.css';
 
 export default function Side() {
   const arLinks = [links.status, links.newChat, links.menu];
+  const [search, setSearch] = useState('');
 
   return (
     <div className="side">
       <Header user={user} links={arLinks} />
-      <Search />
-      <ChatList />
+      <Search search={search} setSearch={setSearch} />
+      <ChatList search={search} />
     </div>
   );
 }
