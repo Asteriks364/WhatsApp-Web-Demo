@@ -20,6 +20,7 @@ export const links = {
   search: {
     title: 'Поиск...',
     icon: searchIcon(),
+    action: 'openRightPanel',
   },
   attach: {
     title: 'Приложить',

@@ -5,6 +5,7 @@ import { arContacts } from './state/contacts';
 
 import Side from './components/Side/Side';
 import Content from './components/Content/Content';
+import RightPanel from './components/RightPanel/RightPanel';
 import './App.css';
 
 export default function App() {
@@ -69,7 +70,7 @@ export default function App() {
 
     const arDate = [formatData(date.getHours()), formatData(date.getMinutes())];
 
-    let newChats = chats.map((chat) => {
+    chats.forEach((chat) => {
       if (chat.id === openedChatID) {
         chat.messages.push({
           text: message,
@@ -78,14 +79,15 @@ export default function App() {
           isRead: false,
         });
       }
-      return chat;
     });
+
+    /*setContacts();
 
     setChats(
       newChats
         .filter((chat) => chat.id === openedChatID)
         .concat(chats.filter((chat) => chat.id !== openedChatID)),
-    );
+    );*/
   };
 
   return (
@@ -103,6 +105,7 @@ export default function App() {
         <div className="app__content">
           <Side />
           <Content />
+          <RightPanel />
         </div>
       </div>
     </Context.Provider>

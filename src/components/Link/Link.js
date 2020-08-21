@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import './Link.css';
 
-export default function Link({ title, icon, onClick }) {
+export default function Link({ title, icon, action, onClick }) {
   const [isOpen, setOpen] = useState(false);
 
   const clickLink = () => {
