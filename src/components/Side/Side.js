@@ -14,7 +14,7 @@ export default function Side() {
   return (
     <div className="side">
       <Header user={user} links={arLinks} />
-      <Search search={search} setSearch={setSearch} />
+      <Search search={search} setSearch={setSearch} searchPlaceholder="Поиск или новый чат" />
       <ChatList search={search} />
     </div>
   );

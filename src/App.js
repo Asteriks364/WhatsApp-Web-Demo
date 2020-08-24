@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import Context from './context/context';
 import { arChats } from './state/chats';
-import { arContacts } from './state/contacts';
+import { contacts } from './state/contacts';
 
 import Side from './components/Side/Side';
 import Content from './components/Content/Content';
@@ -11,9 +11,10 @@ import './App.css';
 export default function App() {
   /* Список чатов */
   const [chats, setChats] = useState(arChats);
-
-  /* Список контактов */
-  const [contacts, setContacts] = useState(arContacts);
+  /* Открытие правой панели */
+  const [openRightPanel, setOpenRightPanel] = useState(false);
+  /* Выбранное сообщенеи в поиске */
+  const [selectMessage, setSelectMessage] = useState(false);
 
   /* Открытый чат */
   let chatOpened = useMemo(() => chats.filter((chat) => chat.isOpen), [chats]);
@@ -46,6 +47,7 @@ export default function App() {
         return chat;
       }),
     );
+    setOpenRightPanel(false);
   };
 
   /* Ввод текста в поле отправки сообщения */
@@ -73,6 +75,7 @@ export default function App() {
     chats.forEach((chat) => {
       if (chat.id === openedChatID) {
         chat.messages.push({
+          id: Math.floor(Math.random() * Math.floor(999999)),
           text: message,
           type: 'out',
           time: arDate.join(':'),
@@ -82,17 +85,20 @@ export default function App() {
     });
 
     /*setContacts();
-
-    setChats(
-      newChats
-        .filter((chat) => chat.id === openedChatID)
-        .concat(chats.filter((chat) => chat.id !== openedChatID)),
-    );*/
+							setChats(
+							  newChats
+								.filter((chat) => chat.id === openedChatID)
+								.concat(chats.filter((chat) => chat.id !== openedChatID)),
+							);*/
   };
 
   return (
     <Context.Provider
       value={{
+        selectMessage,
+        setSelectMessage,
+        openRightPanel,
+        setOpenRightPanel,
         contacts,
         chats,
         openedChatID,
@@ -102,7 +108,7 @@ export default function App() {
       }}
     >
       <div className="app__wrapper">
-        <div className="app__content">
+        <div className={`app__content ${openRightPanel ? 'open-right' : ''}`}>
           <Side />
           <Content />
           <RightPanel />

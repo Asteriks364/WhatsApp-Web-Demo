@@ -66,3 +66,9 @@
 		color: var(--panel-header-icon);
 	}
 }
+
+@media screen and (min-width: 1301px) {
+	.open-right .header {
+		border-right: 1px solid var(--border-stronger);
+	}
+}

@@ -7,9 +7,12 @@ import './ChatWindow.css';
 export default function ChatWindow() {
   const { chats, openedChatID } = useContext(Context);
 
+  /* Массив сообщений выбраного чата */
   const messages = chats.find((chat) => chat.id === openedChatID).messages;
+
   const messagesEndRef = useRef(null);
 
+  /* Скрол в конец списка сообщений */
   useEffect(() => {
     messagesEndRef.current.scrollIntoView({ block: 'end' });
   }, [messages, messages.length]);

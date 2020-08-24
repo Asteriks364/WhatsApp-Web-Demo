@@ -4,30 +4,35 @@ export const arChats = [
     isOpen: false,
     messages: [
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod',
         type: 'out',
         time: '17:31',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet,',
         type: 'out',
         time: '11:42',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectet',
         type: 'out',
         time: '12:25',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, s',
         type: 'in',
         time: '12:25',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labo',
         type: 'in',
@@ -35,12 +40,14 @@ export const arChats = [
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing e',
         type: 'out',
         time: '04:22',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu',
         type: 'out',
@@ -48,18 +55,26 @@ export const arChats = [
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo',
         type: 'in',
         time: '08:27',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit a',
         type: 'in',
         time: '16:22',
         isRead: true,
       },
-      { text: 'Lorem ipsum dolor sit amet, co', type: 'out', time: '02:34', isRead: 0 },
+      {
+        id: Math.floor(Math.random() * Math.floor(999999)),
+        text: 'Lorem ipsum dolor sit amet, co',
+        type: 'out',
+        time: '02:34',
+        isRead: 0,
+      },
     ],
     newMessage: '',
   },
@@ -68,12 +83,14 @@ export const arChats = [
     isOpen: false,
     messages: [
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
         type: 'in',
         time: '22:59',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labo',
         type: 'out',
@@ -81,48 +98,56 @@ export const arChats = [
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetu',
         type: 'out',
         time: '15:30',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur',
         type: 'out',
         time: '14:38',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit ame',
         type: 'in',
         time: '01:38',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inc',
         type: 'out',
         time: '08:05',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo',
         type: 'in',
         time: '00:28',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem',
         type: 'out',
         time: '02:31',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo',
         type: 'in',
         time: '04:42',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu',
         type: 'in',
@@ -130,43 +155,61 @@ export const arChats = [
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do',
         type: 'in',
         time: '08:55',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ',
         type: 'out',
         time: '15:06',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem',
         type: 'in',
         time: '05:01',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ',
         type: 'in',
         time: '11:20',
         isRead: true,
       },
-      { text: 'Lorem ipsum dolor sit amet, cons', type: 'out', time: '09:55', isRead: true },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
+        text: 'Lorem ipsum dolor sit amet, cons',
+        type: 'out',
+        time: '09:55',
+        isRead: true,
+      },
+      {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem i',
         type: 'out',
         time: '21:44',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do',
         type: 'out',
         time: '05:52',
         isRead: true,
       },
-      { text: 'Lorem ipsum dolo', type: 'out', time: '20:10', isRead: false },
+      {
+        id: Math.floor(Math.random() * Math.floor(999999)),
+        text: 'Lorem ipsum dolo',
+        type: 'out',
+        time: '20:10',
+        isRead: false,
+      },
     ],
     newMessage: '',
   },
@@ -175,6 +218,7 @@ export const arChats = [
     isOpen: false,
     messages: [
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt u',
         type: 'out',
@@ -182,12 +226,19 @@ export const arChats = [
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing el',
         type: 'in',
         time: '00:04',
         isRead: true,
       },
-      { text: 'Lorem ipsum dolor', type: 'out', time: '08:22', isRead: true },
+      {
+        id: Math.floor(Math.random() * Math.floor(999999)),
+        text: 'Lorem ipsum dolor',
+        type: 'out',
+        time: '08:22',
+        isRead: true,
+      },
     ],
     newMessage: '',
   },
@@ -196,30 +247,35 @@ export const arChats = [
     isOpen: false,
     messages: [
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit ame',
         type: 'in',
         time: '20:16',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm',
         type: 'in',
         time: '03:31',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, se',
         type: 'out',
         time: '05:30',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, se',
         type: 'in',
         time: '01:56',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur ',
         type: 'out',
         time: '13:12',
@@ -233,6 +289,7 @@ export const arChats = [
     isOpen: false,
     messages: [
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labor',
         type: 'in',
@@ -240,12 +297,14 @@ export const arChats = [
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, c',
         type: 'out',
         time: '01:48',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidi',
         type: 'in',
@@ -253,6 +312,7 @@ export const arChats = [
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut ',
         type: 'in',
@@ -260,6 +320,7 @@ export const arChats = [
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
         type: 'out',
@@ -267,18 +328,21 @@ export const arChats = [
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit am',
         type: 'in',
         time: '00:31',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit a',
         type: 'in',
         time: '22:43',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod t',
         type: 'in',
         time: '23:14',
@@ -292,6 +356,7 @@ export const arChats = [
     isOpen: false,
     messages: [
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut l',
         type: 'in',
@@ -306,26 +371,36 @@ export const arChats = [
     isOpen: false,
     messages: [
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ',
         type: 'in',
         time: '05:50',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidi',
         type: 'out',
         time: '04:09',
         isRead: true,
       },
-      { text: 'Lorem i', type: 'out', time: '03:00', isRead: true },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
+        text: 'Lorem i',
+        type: 'out',
+        time: '03:00',
+        isRead: true,
+      },
+      {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ip',
         type: 'in',
         time: '02:22',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid',
         type: 'in',
@@ -333,37 +408,49 @@ export const arChats = [
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur a',
         type: 'out',
         time: '07:57',
         isRead: true,
       },
-      { text: 'Lorem ipsum ', type: 'in', time: '11:09', isRead: true },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
+        text: 'Lorem ipsum ',
+        type: 'in',
+        time: '11:09',
+        isRead: true,
+      },
+      {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet,',
         type: 'in',
         time: '21:59',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor in',
         type: 'in',
         time: '17:42',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit',
         type: 'in',
         time: '22:56',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
         type: 'in',
         time: '12:37',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore ',
         type: 'out',
@@ -371,6 +458,7 @@ export const arChats = [
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu',
         type: 'out',
@@ -378,6 +466,7 @@ export const arChats = [
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipi',
         type: 'in',
         time: '20:10',
@@ -391,6 +480,7 @@ export const arChats = [
     isOpen: false,
     messages: [
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore',
         type: 'out',
@@ -398,42 +488,54 @@ export const arChats = [
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ',
         type: 'out',
         time: '23:02',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsu',
         type: 'in',
         time: '19:31',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inc',
         type: 'in',
         time: '06:39',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, ',
         type: 'in',
         time: '13:38',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor si',
         type: 'in',
         time: '01:38',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipisc',
         type: 'in',
         time: '22:40',
         isRead: true,
       },
-      { text: 'Lorem ipsum dolor sit ', type: 'in', time: '15:25', isRead: false },
+      {
+        id: Math.floor(Math.random() * Math.floor(999999)),
+        text: 'Lorem ipsum dolor sit ',
+        type: 'in',
+        time: '15:25',
+        isRead: false,
+      },
     ],
     newMessage: '',
   },
@@ -442,18 +544,21 @@ export const arChats = [
     isOpen: false,
     messages: [
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet',
         type: 'in',
         time: '23:57',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor',
         type: 'in',
         time: '22:02',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu',
         type: 'out',
@@ -461,18 +566,21 @@ export const arChats = [
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adip',
         type: 'in',
         time: '04:41',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dol',
         type: 'in',
         time: '08:05',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut lab',
         type: 'out',
@@ -480,12 +588,14 @@ export const arChats = [
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur ad',
         type: 'in',
         time: '16:23',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidi',
         type: 'out',
@@ -493,60 +603,70 @@ export const arChats = [
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor',
         type: 'out',
         time: '21:39',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed d',
         type: 'out',
         time: '20:49',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dol',
         type: 'in',
         time: '09:38',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscin',
         type: 'out',
         time: '01:15',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit ame',
         type: 'out',
         time: '14:06',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipis',
         type: 'in',
         time: '15:52',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, conse',
         type: 'out',
         time: '07:35',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adi',
         type: 'out',
         time: '22:17',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit ame',
         type: 'out',
         time: '02:05',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur ad',
         type: 'out',
         time: '20:10',
@@ -560,6 +680,7 @@ export const arChats = [
     isOpen: false,
     messages: [
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e',
         type: 'out',
         time: '10:10',
@@ -573,26 +694,29 @@ export const arChats = [
     isOpen: false,
     messages: [
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing',
         type: 'out',
         time: '09:03',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inc',
         type: 'out',
         time: '15:29',
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu',
         type: 'in',
         time: '17:02',
-
         isRead: true,
       },
       {
+        id: Math.floor(Math.random() * Math.floor(999999)),
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i',
         type: 'out',
         time: '22:10',
