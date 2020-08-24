@@ -20,7 +20,38 @@
 		background-repeat: repeat-x;
 		border-radius: 0;
 		transform-origin: center;
-		animation: _2rw5W .3s cubic-bezier(.1, .82, .25, 1);
+		animation: all .3s cubic-bezier(.1, .82, .25, 1);
+	}
+
+	.chat__last-message {
+		display: flex;
+		align-items: center;
+		min-height: 20px;
+		color: var(--secondary);
+		font-size: 13px;
+		margin-top: 2px;
+	}
+
+	.chat__last-message .message__status {
+		margin: 0;
+		margin-right: 2px;
+		height: 18px;
+	}
+
+	.chat__last-message svg {
+		height: 18px;
+		width: 18px;
+	}
+
+	.chat__last-message-text {
+		flex-grow: 1;
+		overflow: hidden;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 20px;
+		text-align: left;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 	}
 }
 
