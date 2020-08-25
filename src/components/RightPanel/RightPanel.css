@@ -5,6 +5,7 @@
 		height: 100%;
 		overflow: hidden;
 		transform: translateZ(0);
+		background-color: var(--drawer-background);
 	}
 
 	.right-panel__wrap {
@@ -52,7 +53,11 @@
 		flex-direction: column;
 		flex-grow: 1;
 		overflow-y: auto;
+	}
+
+	.search-message {
 		background-color: var(--background-default);
+		height: 100%;
 	}
 
 	.message-list__empty {
@@ -108,6 +113,205 @@
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
+	}
+
+	.contact-profile {
+		flex: none;
+		padding-bottom: 32px;
+	}
+
+	.contact-profile__block {
+		position: relative;
+		flex: none;
+		margin-bottom: 10px;
+		background-color: var(--drawer-section-background);
+		box-shadow: 0 1px 3px var(--shadow-light);
+		animation: 1s cubic-bezier(.1, .82, .25, 1);
+	}
+
+	.contact-profile__block_big-padding {
+		padding: 28px 30px 19px;
+	}
+
+	.contact-profile__block_min-padding {
+		padding: 14px 30px 10px;
+	}
+
+	.contact-profile .user {
+		display: block;
+	}
+
+	.contact-profile .user__avatar {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 20px;
+	}
+
+	.contact-profile .avatar {
+		background-color: var(--avatar-background);
+		border-radius: 50%;
+	}
+
+	.contact-profile .user__name {
+		font-size: 19px;
+		line-height: 28px;
+		margin-bottom: 3px;
+	}
+
+	.contact-profile .user__visit {
+		color: var(--secondary-lighter);
+		font-size: 14px;
+		line-height: 20px;
+	}
+
+	.contact-profile .user__info {
+		padding: 0;
+	}
+
+	.contact-profile__link {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 14px;
+	}
+
+	.contact-profile__link.padding {
+		padding: 14px 30px 4px;
+		margin-bottom: 0;
+	}
+
+	.contact-profile__link .title {
+		position: relative;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		color: var(--teal);
+		font-size: 14px;
+		height: 25px;
+	}
+
+	.contact-profile__link .icon {
+		margin-left: 10px;
+		color: var(--icon-fixed);
+	}
+
+	.file-list {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		justify-content: center;
+		overflow-y: hidden;
+		padding-top: 6px;
+		margin-right: -8px;
+	}
+
+	.file-list_empty {
+		height: 45px;
+		color: var(--secondary-lighter);
+		font-size: 14px;
+		line-height: 20px;
+		padding-top: 0;
+		padding-bottom: 15px;
+	}
+
+	.profile__link {
+		margin-left: 30px;
+	}
+
+	.profile__link + .profile__link {
+		border-top: 1px solid var(--border-list);
+	}
+
+	.profile__wrap {
+		display: flex;
+		align-items: center;
+		height: 60px;
+		padding-right: 30px;
+	}
+
+	.profile__wrap.revert {
+		flex-direction: row-reverse;
+		background-color: var(--background-default);
+	}
+
+	.profile__wrap.revert:hover {
+		background-color: var(--background-default-hover);
+	}
+
+	.profile__wrap.revert.red > span {
+		color: var(--danger);
+	}
+
+	.profile__wrap .title {
+		flex: 1 1 auto;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		color: var(--primary-strong);
+		font-size: 17px;
+		line-height: 21px;
+	}
+
+	.profile__wrap .icon,
+	.profile__wrap .checkbox {
+		margin-left: 15px;
+		color: var(--icon-fixed);
+	}
+
+	.profile__wrap.revert .icon {
+		display: flex;
+		justify-content: center;
+		width: 74px;
+		margin: 0;
+	}
+
+	.profile__wrap .checkbox {
+		position: relative;
+		display: inline-block;
+		width: 18px;
+		height: 18px;
+		vertical-align: middle;
+		transform: translateZ(0);
+		cursor: pointer;
+	}
+
+	.profile__wrap .checkbox:before {
+		content: '';
+		display: block;
+		position: relative;
+		box-sizing: border-box;
+		height: 100%;
+		background-color: initial;
+		border: 2px solid rgba(var(--primary-rgb), .75);
+		border-radius: 2px;
+		transition: background-color .14s, border-color .14s;
+		pointer-events: none;
+	}
+
+	.profile__wrap .checkbox:after {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 5px;
+		height: 10px;
+		top: 1px;
+		left: 6px;
+		border-top: none;
+		border-right: 2px solid var(--checkbox-mark);
+		border-bottom: 2px solid var(--checkbox-mark);
+		border-left: none;
+		transform: rotate(45deg);
+		opacity: 0;
+	}
+
+	.profile__wrap.checked .checkbox:before {
+		background-color: var(--checkbox-background);
+		border-color: var(--checkbox-background);
+	}
+
+	.profile__wrap.checked .checkbox:after {
+		opacity: 1;
+		animation: .16s ease-out forwards;
 	}
 }
 

@@ -20,7 +20,7 @@
 		background-repeat: repeat-x;
 		border-radius: 0;
 		transform-origin: center;
-		animation: all .3s cubic-bezier(.1, .82, .25, 1);
+		animation: .3s cubic-bezier(.1, .82, .25, 1);
 	}
 
 	.chat__last-message {
