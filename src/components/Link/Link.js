@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import Context from '../../context/context';
 
 import './Link.css';
 
-export default function Link({ title, icon, onClick }) {
+export default function Link({ title, icon, action, onClick }) {
   const [isOpen, setOpen] = useState(false);
+
+  const { setActionRightPanel } = useContext(Context);
 
   const clickLink = () => {
     if (onClick) return onClick();
+    if (action === 'searchMessage') return setActionRightPanel('searchMessage');
     setOpen(!isOpen);
     alert(!isOpen ? 'открыть ' + title : 'закрыть ' + title);
   };

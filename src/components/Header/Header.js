@@ -1,34 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Context from '../../context/context';
 
+import User from '../User/User';
 import Link from '../Link/Link';
-import AvatarImg from '../AvatarImg/AvatarImg';
 import './Header.css';
 
-export default function Header({ user, userPrors = false, links }) {
+export default function Header({ user, userContact = false, links }) {
+  const { setActionRightPanel } = useContext(Context);
+
   const openUserCard = () => {
-    alert('Открыть профиль пользователя');
+    return userContact ? setActionRightPanel('openContactProfile') : console.log('open');
   };
 
   return (
     <header className="header">
-      <div className="user" role="button" onClick={openUserCard}>
-        <div className="user__avatar">
-          <AvatarImg avatar={user.avatar} size="small" />
-        </div>
-        {userPrors && (
-          <div className="user__info">
-            <span title={user.name} className="user__name">
-              {user.name}
-            </span>
-            <span title={user.lastVisit} className="user__visit">
-              был(-а) {user.lastVisit}
-            </span>
-          </div>
-        )}
+      <div className="header__user" role="button" onClick={openUserCard}>
+        <User user={user} props={userContact} avatarSize="small" />
       </div>
-      <div className="link-block">
+      <div className="header__link-block">
         {links.map((link, index) => (
-          <Link key={index} title={link.title} icon={link.icon} />
+          <Link key={index} title={link.title} icon={link.icon} action={link.action} />
         ))}
       </div>
     </header>

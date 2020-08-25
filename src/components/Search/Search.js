@@ -5,7 +5,7 @@ import { buttonSearch } from '../Icons/buttonSearch';
 import { buttonClear } from '../Icons/buttonClear';
 import './Search.css';
 
-export default function Search({ search, setSearch }) {
+export default function Search({ search, setSearch, searchPlaceholder }) {
   const [isFocus, setIsFocus] = useState(search ? true : false);
 
   const searchInput = useRef(null);
@@ -37,7 +37,7 @@ export default function Search({ search, setSearch }) {
           <span>{buttonClear()}</span>
         </button>
       )}
-      <div className="search__placeholder selectable-text">Поиск или новый чат</div>
+      <div className="search__placeholder selectable-text">{searchPlaceholder}</div>
       <label className="search__label">
         <input
           type="text"

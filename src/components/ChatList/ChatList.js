@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Context from '../../context/context';
 
 import Chat from '../Chat/Chat';
@@ -14,13 +13,13 @@ export default function ChatList({ search }) {
 
   return (
     <div className="chat-list">
-      <TransitionGroup>
-        {filterContacts.map((contact) => (
-          <CSSTransition key={contact.id} timeout={200} classNames="item">
-            <Chat chat={chats.find((chat) => contact.id === chat.id)} contact={contact} />
-          </CSSTransition>
-        ))}
-      </TransitionGroup>
+      {filterContacts.map((contact) => (
+        <Chat
+          key={contact.id}
+          chat={chats.find((chat) => contact.id === chat.id)}
+          contact={contact}
+        />
+      ))}
     </div>
   );
 }

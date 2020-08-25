@@ -109,10 +109,26 @@
 	.content {
 		flex: 70%;
 	}
+
+	.open-right .content {
+		flex: 45%;
+	}
+}
+
+@media screen and (max-width: 1300px) and (min-width: 1025px) {
+	.open-right .content {
+		flex: 40%;
+	}
 }
 
 @media screen and (max-width: 1300px) and (min-width: 901px) {
 	.content {
+		flex: 65%;
+	}
+}
+
+@media screen and (max-width: 1024px) and (min-width: 901px) {
+	.open-right .content {
 		flex: 65%;
 	}
 }

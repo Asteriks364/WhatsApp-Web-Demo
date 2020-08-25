@@ -111,6 +111,22 @@
 		color: var(--outgoing-background);
 		right: -8px;
 	}
+
+	.message_find .message__wrap {
+		background-color: var(--incoming-background-highlight);
+	}
+
+	.message_find .message__wrap-triangle {
+		color: var(--incoming-background-highlight);
+	}
+
+	.message_find.message_out .message__wrap, {
+		background-color: var(--outgoing-background-highlight);
+	}
+
+	.message_find.message_out .message__wrap-triangle {
+		color: var(--outgoing-background-highlight);
+	}
 }
 
 @media screen and (min-width: 1301px) {

@@ -5,64 +5,27 @@
 		display: flex;
 		flex: none;
 		align-items: center;
-		justify-content: flex-end;
+		justify-content: space-between;
 		box-sizing: border-box;
 		width: 100%;
 		height: 59px;
 		padding: 10px 16px;
 		background-color: var(--panel-header-background);
 	}
-	
+
 	.content .header {
 		border-left: 1px solid var(--border-stronger);
 	}
-	
-	.user {
-		display: flex;
-		flex-grow: 1;
-	}
-	
-	.user__avatar {
-		position: relative;
-		overflow: hidden;
-		border-radius: 50%;
-		height: 40px;
-		width: 40px;
-		padding: 0 15px 0 0;
-		cursor: pointer;
-	}
-	
-	.user__info {
-		display: flex;
-		flex-direction: column;
-		flex-grow: 1;
-		justify-content: center;
-		min-width: 0;
-	}
-	
-	.user__name {
-		display: inline-block;
-		position: relative;
-		flex-grow: 1;
-		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		color: var(--primary-strong);
-	}
-	
-	.user__visit {
-		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		min-height: 20px;
-		color: var(--secondary);
-		font-size: 13px;
-		line-height: 20px;
-	}
-	
-	.link-block {
+
+	.header__link-block {
 		display: flex;
 		align-items: center;
 		color: var(--panel-header-icon);
+	}
+}
+
+@media screen and (min-width: 1301px) {
+	.open-right .content .header {
+		border-right: 1px solid var(--border-stronger);
 	}
 }

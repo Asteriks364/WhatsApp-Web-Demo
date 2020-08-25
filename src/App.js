@@ -5,14 +5,18 @@ import { arContacts } from './state/contacts';
 
 import Side from './components/Side/Side';
 import Content from './components/Content/Content';
+import RightPanel from './components/RightPanel/RightPanel';
 import './App.css';
 
 export default function App() {
   /* Список чатов */
   const [chats, setChats] = useState(arChats);
-
   /* Список контактов */
   const [contacts, setContacts] = useState(arContacts);
+  /* Действие для открытия правой панели */
+  const [actionRightPanel, setActionRightPanel] = useState(false);
+  /* Выбранное сообщенеи в поиске */
+  const [selectMessage, setSelectMessage] = useState(false);
 
   /* Открытый чат */
   let chatOpened = useMemo(() => chats.filter((chat) => chat.isOpen), [chats]);
@@ -31,11 +35,21 @@ export default function App() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   /* Запись объекта чатов в localStorage */
   useEffect(() => {
     localStorage.setItem('chats', JSON.stringify(chats));
   }, [chats]);
+
+  /* Запись в объект контактов из localStorage */
+  useEffect(() => {
+    const raw = localStorage.getItem('contacts');
+    if (raw) setContacts(JSON.parse(raw));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  /* Запись объекта контактов в localStorage */
+  useEffect(() => {
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+  }, [contacts]);
 
   /* Открытие чата по клику в списке чатов */
   const openChat = (id) => {
@@ -45,6 +59,7 @@ export default function App() {
         return chat;
       }),
     );
+    setActionRightPanel(false);
   };
 
   /* Ввод текста в поле отправки сообщения */
@@ -72,6 +87,7 @@ export default function App() {
     let newChats = chats.map((chat) => {
       if (chat.id === openedChatID) {
         chat.messages.push({
+          id: Math.floor(Math.random() * Math.floor(999999)),
           text: message,
           type: 'out',
           time: arDate.join(':'),
@@ -80,6 +96,12 @@ export default function App() {
       }
       return chat;
     });
+
+    setContacts(
+      contacts
+        .filter((contact) => contact.id === openedChatID)
+        .concat(contacts.filter((contact) => contact.id !== openedChatID)),
+    );
 
     setChats(
       newChats
@@ -91,18 +113,25 @@ export default function App() {
   return (
     <Context.Provider
       value={{
-        contacts,
         chats,
+        contacts,
         openedChatID,
+        actionRightPanel,
+        selectMessage,
+        setChats,
+        setContacts,
+        setActionRightPanel,
+        setSelectMessage,
         openChat,
         sendMessageChat,
         writeNewMessageChat,
       }}
     >
       <div className="app__wrapper">
-        <div className="app__content">
+        <div className={`app__content ${actionRightPanel ? 'open-right' : ''}`}>
           <Side />
           <Content />
+          <RightPanel />
         </div>
       </div>
     </Context.Provider>

@@ -14,6 +14,16 @@
 	.side {
 		flex: 30%;
 	}
+
+	.open-right .side {
+		flex: 25%;
+	}
+}
+
+@media screen and (max-width: 1300px) and (min-width: 1025px) {
+	.open-right .side {
+		flex: 30%;
+	}
 }
 
 @media screen and (max-width: 1300px) and (min-width: 901px) {
@@ -22,8 +32,14 @@
 	}
 }
 
+@media screen and (max-width: 1024px) and (min-width: 901px) {
+	.open-right .side {
+		flex: 35%;
+	}
+}
+
 @media screen and (max-width: 900px) {
 	.side {
-		flex: 40%;
+		flex: 35%;
 	}
 }

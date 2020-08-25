@@ -8,6 +8,7 @@ import ChatWindow from '../ChatWindow/ChatWindow';
 import Footer from '../Footer/Footer';
 import './Content.css';
 
+/* Фон окна сообщений при первом открытии */
 const contentOverlay = () => (
   <div className="content__overlay">
     <div className="content__overlay-wrap">
@@ -49,7 +50,7 @@ export default function Content() {
         <div className="content__wrap content__wrap_open">
           <Header
             user={contacts.find((contact) => contact.id === openedChatID)}
-            userPrors={true}
+            userContact={true}
             links={arLinks}
           />
           <ChatWindow />
