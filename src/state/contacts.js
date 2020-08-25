@@ -1,4 +1,4 @@
-export const contacts = [
+export const arContacts = [
   {
     id: 1,
     name: 'Lupe Rutherford',
