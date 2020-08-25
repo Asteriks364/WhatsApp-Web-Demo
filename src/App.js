@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import Context from './context/context';
 import { arChats } from './state/chats';
-import { contacts } from './state/contacts';
+import { arContacts } from './state/contacts';
 
 import Side from './components/Side/Side';
 import Content from './components/Content/Content';
@@ -11,6 +11,8 @@ import './App.css';
 export default function App() {
   /* Список чатов */
   const [chats, setChats] = useState(arChats);
+  /* Список контактов */
+  const [contacts, setContacts] = useState(arContacts);
   /* Открытие правой панели */
   const [openRightPanel, setOpenRightPanel] = useState(false);
   /* Выбранное сообщенеи в поиске */
@@ -72,7 +74,7 @@ export default function App() {
 
     const arDate = [formatData(date.getHours()), formatData(date.getMinutes())];
 
-    chats.forEach((chat) => {
+    let newChats = chats.map((chat) => {
       if (chat.id === openedChatID) {
         chat.messages.push({
           id: Math.floor(Math.random() * Math.floor(999999)),
@@ -82,14 +84,20 @@ export default function App() {
           isRead: false,
         });
       }
+      return chat;
     });
 
-    /*setContacts();
-							setChats(
-							  newChats
-								.filter((chat) => chat.id === openedChatID)
-								.concat(chats.filter((chat) => chat.id !== openedChatID)),
-							);*/
+    setContacts(
+      contacts
+        .filter((contact) => contact.id === openedChatID)
+        .concat(contacts.filter((contact) => contact.id !== openedChatID)),
+    );
+
+    setChats(
+      newChats
+        .filter((chat) => chat.id === openedChatID)
+        .concat(chats.filter((chat) => chat.id !== openedChatID)),
+    );
   };
 
   return (
