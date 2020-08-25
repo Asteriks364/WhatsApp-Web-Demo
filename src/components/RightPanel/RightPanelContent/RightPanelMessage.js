@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import Context from '../../context/context';
+import Context from '../../../context/context';
 
-import { statusMessageIcon } from '../Icons/statusMessageIcon';
+import { statusMessageIcon } from '../../Icons/statusMessageIcon';
 
 export default function RightPanelMessage({ message }) {
   const { setSelectMessage } = useContext(Context);

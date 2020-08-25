@@ -1,0 +1,39 @@
+@media all {
+	.user {
+		display: flex;
+	}
+
+	.user__avatar {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.user__info {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		justify-content: center;
+		min-width: 0;
+		padding-left: 15px;
+	}
+
+	.user__name {
+		display: inline-block;
+		position: relative;
+		flex-grow: 1;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		color: var(--primary-strong);
+	}
+
+	.user__visit {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		min-height: 20px;
+		color: var(--secondary);
+		font-size: 13px;
+		line-height: 20px;
+	}
+}

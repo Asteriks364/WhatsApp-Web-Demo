@@ -13,8 +13,8 @@ export default function App() {
   const [chats, setChats] = useState(arChats);
   /* Список контактов */
   const [contacts, setContacts] = useState(arContacts);
-  /* Открытие правой панели */
-  const [openRightPanel, setOpenRightPanel] = useState(false);
+  /* Действие для открытия правой панели */
+  const [actionRightPanel, setActionRightPanel] = useState(false);
   /* Выбранное сообщенеи в поиске */
   const [selectMessage, setSelectMessage] = useState(false);
 
@@ -35,11 +35,21 @@ export default function App() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   /* Запись объекта чатов в localStorage */
   useEffect(() => {
     localStorage.setItem('chats', JSON.stringify(chats));
   }, [chats]);
+
+  /* Запись в объект контактов из localStorage */
+  useEffect(() => {
+    const raw = localStorage.getItem('contacts');
+    if (raw) setContacts(JSON.parse(raw));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  /* Запись объекта контактов в localStorage */
+  useEffect(() => {
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+  }, [contacts]);
 
   /* Открытие чата по клику в списке чатов */
   const openChat = (id) => {
@@ -49,7 +59,7 @@ export default function App() {
         return chat;
       }),
     );
-    setOpenRightPanel(false);
+    setActionRightPanel(false);
   };
 
   /* Ввод текста в поле отправки сообщения */
@@ -103,20 +113,22 @@ export default function App() {
   return (
     <Context.Provider
       value={{
-        selectMessage,
-        setSelectMessage,
-        openRightPanel,
-        setOpenRightPanel,
-        contacts,
         chats,
+        contacts,
         openedChatID,
+        actionRightPanel,
+        selectMessage,
+        setChats,
+        setContacts,
+        setActionRightPanel,
+        setSelectMessage,
         openChat,
         sendMessageChat,
         writeNewMessageChat,
       }}
     >
       <div className="app__wrapper">
-        <div className={`app__content ${openRightPanel ? 'open-right' : ''}`}>
+        <div className={`app__content ${actionRightPanel ? 'open-right' : ''}`}>
           <Side />
           <Content />
           <RightPanel />

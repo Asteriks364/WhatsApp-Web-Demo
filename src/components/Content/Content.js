@@ -50,7 +50,7 @@ export default function Content() {
         <div className="content__wrap content__wrap_open">
           <Header
             user={contacts.find((contact) => contact.id === openedChatID)}
-            userPrors={true}
+            userContact={true}
             links={arLinks}
           />
           <ChatWindow />
