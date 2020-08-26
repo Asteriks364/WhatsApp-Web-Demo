@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Context from '../../context/context';
+import { Context } from '../../context/AppContext';
 
 import { emojiIcon } from '../Icons/emojiIcon';
 import { sendIcon } from '../Icons/sendIcon';

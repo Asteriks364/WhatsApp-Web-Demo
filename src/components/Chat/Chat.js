@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import Context from '../../context/context';
+import { Context } from '../../context/AppContext';
 import { statusMessageIcon } from '../Icons/statusMessageIcon';
 
 import AvatarImg from '../AvatarImg/AvatarImg';
