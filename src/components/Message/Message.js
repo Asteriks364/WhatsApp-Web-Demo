@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import Context from '../../context/context';
+import { Context } from '../../context/AppContext';
 
 import { statusMessageIcon } from '../Icons/statusMessageIcon';
 import { tailInIcon } from '../Icons/tailInIcon';

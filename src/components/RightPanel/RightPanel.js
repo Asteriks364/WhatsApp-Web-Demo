@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import Context from '../../context/context';
+import { Context } from '../../context/AppContext';
 
 import { buttonClose } from '../Icons/buttonClose';
 import RightPanelSearchMessage from './RightPanelContent/RightPanelSearchMessage';

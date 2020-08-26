@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from 'react';
-import Context from '../../../context/context';
+import { Context } from '../../../context/AppContext';
 
 import { arrowRight } from '../../Icons/arrowRight';
 import { blocked } from '../../Icons/blocked';
@@ -18,9 +18,15 @@ const profileBlockText = (className, text, icon = false, checkbox = false, ref =
 };
 
 export default function RightPanelOpenProfile() {
-  const { chats, contacts, openedChatID, setChats, setContacts, setActionRightPanel } = useContext(
-    Context,
-  );
+  const {
+    chats,
+    contacts,
+    openedChatID,
+    setChats,
+    setContacts,
+    setOpenedChatID,
+    setActionRightPanel,
+  } = useContext(Context);
   const muteContactLink = useRef(null);
 
   const user = contacts.find((contact) => contact.id === openedChatID);
@@ -46,9 +52,10 @@ export default function RightPanelOpenProfile() {
   };
 
   const deletedContact = () => {
+    setActionRightPanel(false);
+    setOpenedChatID(false);
     setChats(chats.filter((chat) => chat.id !== openedChatID));
     setContacts(contacts.filter((contact) => contact.id !== openedChatID));
-    setActionRightPanel(false);
   };
 
   return (

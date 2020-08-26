@@ -2,12 +2,15 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 
+import AppContext from './context/AppContext';
 import App from './App';
-import './index.css';
+import './style.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AppContext>
+      <App className="app__wrapper" />
+    </AppContext>
   </React.StrictMode>,
   document.getElementById('app'),
 );
