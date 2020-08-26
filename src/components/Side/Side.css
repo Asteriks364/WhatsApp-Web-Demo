@@ -21,25 +21,23 @@
 }
 
 @media screen and (max-width: 1300px) and (min-width: 1025px) {
+	.side {
+		flex: 35%;
+	}
+
 	.open-right .side {
 		flex: 30%;
 	}
 }
 
-@media screen and (max-width: 1300px) and (min-width: 901px) {
-	.side {
-		flex: 35%;
-	}
-}
-
 @media screen and (max-width: 1024px) and (min-width: 901px) {
-	.open-right .side {
+	.side, .open-right .side {
 		flex: 35%;
 	}
 }
 
 @media screen and (max-width: 900px) {
-	.side {
-		flex: 35%;
+	.side, .open-right .side {
+		flex: 40%;
 	}
 }
