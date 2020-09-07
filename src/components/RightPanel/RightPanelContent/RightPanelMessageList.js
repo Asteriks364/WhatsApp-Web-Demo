@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
-import { Context } from '../../../context/AppContext';
+import * as React from 'react';
 
+import { useApp } from '../../../context/AppProvider';
 import RightPanelMessage from './RightPanelMessage';
 
 export default function RightPanelMessageList({ searchMessage }) {
-  const { chats, contacts, openedChatID } = useContext(Context);
+  const appContext = useApp();
+  const { chats, contacts, openedChatID } = appContext;
 
   /* Массив сообщений выбраного чата */
   const messages = chats.find((chat) => chat.id === openedChatID).messages;

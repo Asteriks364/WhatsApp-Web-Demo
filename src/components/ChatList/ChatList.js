@@ -1,11 +1,12 @@
-import React, { useContext } from 'react';
-import { Context } from '../../context/AppContext';
+import * as React from 'react';
 
+import { useApp } from '../../context/AppProvider';
 import Chat from '../Chat/Chat';
 import './ChatList.css';
 
 export default function ChatList({ search }) {
-  const { contacts, chats } = useContext(Context);
+  const appContext = useApp();
+  const { contacts, chats } = appContext;
 
   let filterContacts = contacts.filter(
     (contact) => contact.name.toLowerCase().indexOf(search.toLowerCase().trim()) !== -1,

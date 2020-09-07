@@ -1,7 +1,6 @@
-export const arChats = [
+export const chats = [
   {
     id: 1,
-    isOpen: false,
     messages: [
       {
         id: Math.floor(Math.random() * Math.floor(999999)),
@@ -76,11 +75,9 @@ export const arChats = [
         isRead: 0,
       },
     ],
-    newMessage: '',
   },
   {
     id: 2,
-    isOpen: false,
     messages: [
       {
         id: Math.floor(Math.random() * Math.floor(999999)),
@@ -211,11 +208,9 @@ export const arChats = [
         isRead: false,
       },
     ],
-    newMessage: '',
   },
   {
     id: 3,
-    isOpen: false,
     messages: [
       {
         id: Math.floor(Math.random() * Math.floor(999999)),
@@ -240,11 +235,9 @@ export const arChats = [
         isRead: true,
       },
     ],
-    newMessage: '',
   },
   {
     id: 4,
-    isOpen: false,
     messages: [
       {
         id: Math.floor(Math.random() * Math.floor(999999)),
@@ -282,11 +275,9 @@ export const arChats = [
         isRead: true,
       },
     ],
-    newMessage: '',
   },
   {
     id: 5,
-    isOpen: false,
     messages: [
       {
         id: Math.floor(Math.random() * Math.floor(999999)),
@@ -349,11 +340,9 @@ export const arChats = [
         isRead: false,
       },
     ],
-    newMessage: '',
   },
   {
     id: 6,
-    isOpen: false,
     messages: [
       {
         id: Math.floor(Math.random() * Math.floor(999999)),
@@ -364,11 +353,9 @@ export const arChats = [
         isRead: false,
       },
     ],
-    newMessage: '',
   },
   {
     id: 7,
-    isOpen: false,
     messages: [
       {
         id: Math.floor(Math.random() * Math.floor(999999)),
@@ -473,11 +460,9 @@ export const arChats = [
         isRead: false,
       },
     ],
-    newMessage: '',
   },
   {
     id: 8,
-    isOpen: false,
     messages: [
       {
         id: Math.floor(Math.random() * Math.floor(999999)),
@@ -537,11 +522,9 @@ export const arChats = [
         isRead: false,
       },
     ],
-    newMessage: '',
   },
   {
     id: 9,
-    isOpen: false,
     messages: [
       {
         id: Math.floor(Math.random() * Math.floor(999999)),
@@ -673,11 +656,9 @@ export const arChats = [
         isRead: false,
       },
     ],
-    newMessage: '',
   },
   {
     id: 10,
-    isOpen: false,
     messages: [
       {
         id: Math.floor(Math.random() * Math.floor(999999)),
@@ -687,11 +668,9 @@ export const arChats = [
         isRead: false,
       },
     ],
-    newMessage: '',
   },
   {
     id: 11,
-    isOpen: false,
     messages: [
       {
         id: Math.floor(Math.random() * Math.floor(999999)),
@@ -723,6 +702,5 @@ export const arChats = [
         isRead: true,
       },
     ],
-    newMessage: '',
   },
 ];

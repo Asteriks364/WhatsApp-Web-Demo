@@ -2,17 +2,17 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 
-import AppContext from './context/AppContext';
-import App from './App';
+import { AppProvider } from './context/AppProvider';
+import { App } from './App';
 import './style.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppContext>
-      <App className="app__wrapper" />
-    </AppContext>
+    <AppProvider>
+      <App />
+    </AppProvider>
   </React.StrictMode>,
-  document.getElementById('app'),
+  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change

@@ -1,12 +1,14 @@
-import React, { useContext } from 'react';
-import { Context } from '../../context/AppContext';
+import * as React from 'react';
+
+import { useApp } from '../../context/AppProvider';
 import { statusMessageIcon } from '../Icons/statusMessageIcon';
 
 import AvatarImg from '../AvatarImg/AvatarImg';
 import './Chat.css';
 
 export default function Chat({ contact, chat }) {
-  const { openChat } = useContext(Context);
+  const appContext = useApp();
+  const { openChat } = appContext;
 
   return (
     <div className={`chat ${chat.isOpen ? 'chat_open' : ''}`} onClick={() => openChat(chat.id)}>
