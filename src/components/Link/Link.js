@@ -1,12 +1,13 @@
-import React, { useContext, useState } from 'react';
-import { Context } from '../../context/AppContext';
+import React, { useState } from 'react';
 
+import { useApp } from '../../context/AppProvider';
 import './Link.css';
 
 export default function Link({ title, icon, action, onClick }) {
-  const [isOpen, setOpen] = useState(false);
+  const appContext = useApp();
+  const { setActionRightPanel } = appContext;
 
-  const { setActionRightPanel } = useContext(Context);
+  const [isOpen, setOpen] = useState(false);
 
   const clickLink = () => {
     if (onClick) return onClick();

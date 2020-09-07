@@ -1,11 +1,12 @@
-import React, { useContext, useEffect, useRef } from 'react';
-import { Context } from '../../context/AppContext';
+import React, { useEffect, useRef } from 'react';
 
+import { useApp } from '../../context/AppProvider';
 import Message from '../Message/Message';
 import './ChatWindow.css';
 
 export default function ChatWindow() {
-  const { chats, openedChatID } = useContext(Context);
+  const appContext = useApp();
+  const { chats, openedChatID } = appContext;
 
   /* Массив сообщений выбраного чата */
   const messages = chats.find((chat) => chat.id === openedChatID).messages;

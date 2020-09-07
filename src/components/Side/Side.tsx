@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 import { user } from '../../state/user';
 import { links } from '../../state/links';
 
 import Header from '../Header/Header';
 import Search from '../Search/Search';
 import ChatList from '../ChatList/ChatList';
+
 import './Side.css';
 
-export default function Side() {
+export const Side = (): JSX.Element => {
   const arLinks = [links.status, links.newChat, links.menu];
   const [search, setSearch] = useState('');
 
@@ -18,4 +20,4 @@ export default function Side() {
       <ChatList search={search} />
     </div>
   );
-}
+};

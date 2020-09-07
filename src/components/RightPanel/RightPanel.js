@@ -1,13 +1,14 @@
-import React, { useContext } from 'react';
-import { Context } from '../../context/AppContext';
+import * as React from 'react';
 
+import { useApp } from '../../context/AppProvider';
 import { buttonClose } from '../Icons/buttonClose';
 import RightPanelSearchMessage from './RightPanelContent/RightPanelSearchMessage';
 import RightPanelOpenProfile from './RightPanelContent/RightPanelOpenProfile';
 import './RightPanel.css';
 
 export default function RightPanel() {
-  const { actionRightPanel, setActionRightPanel } = useContext(Context);
+  const appContext = useApp();
+  const { actionRightPanel, setActionRightPanel } = appContext;
 
   /* Закрытие правой панели */
   const closePanel = () => setActionRightPanel(false);

@@ -1,12 +1,13 @@
-import React, { useContext } from 'react';
-import { Context } from '../../context/AppContext';
+import * as React from 'react';
 
+import { useApp } from '../../context/AppProvider';
 import User from '../User/User';
 import Link from '../Link/Link';
 import './Header.css';
 
 export default function Header({ user, userContact = false, links }) {
-  const { setActionRightPanel } = useContext(Context);
+  const appContext = useApp();
+  const { setActionRightPanel } = appContext;
 
   const openUserCard = () => {
     return userContact ? setActionRightPanel('openContactProfile') : console.log('open');

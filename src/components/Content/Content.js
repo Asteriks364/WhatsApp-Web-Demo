@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
-import { Context } from '../../context/AppContext';
+import * as React from 'react';
 import { links } from '../../state/links';
 
+import { useApp } from '../../context/AppProvider';
 import ContentOverlay from './ContentOverlay/ContentOverlay';
 import Header from '../Header/Header';
 import ChatWindow from '../ChatWindow/ChatWindow';
@@ -9,7 +9,8 @@ import Footer from '../Footer/Footer';
 import './Content.css';
 
 export default function Content() {
-  const { contacts, openedChatID } = useContext(Context);
+  const appContext = useApp();
+  const { contacts, openedChatID } = appContext;
 
   const arLinks = [links.search, links.attach, links.menu];
 

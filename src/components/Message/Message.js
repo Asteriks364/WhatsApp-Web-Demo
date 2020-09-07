@@ -1,13 +1,14 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
-import { Context } from '../../context/AppContext';
+import React, { useEffect, useRef, useState } from 'react';
 
+import { useApp } from '../../context/AppProvider';
 import { statusMessageIcon } from '../Icons/statusMessageIcon';
 import { tailInIcon } from '../Icons/tailInIcon';
 import { tailOutIcon } from '../Icons/tailOutIcon';
 import './Message.css';
 
 export default function Message({ message }) {
-  const { selectMessage } = useContext(Context);
+  const appContext = useApp();
+  const { selectMessage } = appContext;
 
   /* Классы для сообщения */
   const [messageClassName, setMessageClassName] = useState(['message', `message_${message.type}`]);

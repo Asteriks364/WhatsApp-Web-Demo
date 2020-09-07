@@ -1,6 +1,6 @@
-import React, { useContext, useRef } from 'react';
-import { Context } from '../../../context/AppContext';
+import React, { useRef } from 'react';
 
+import { useApp } from '../../../context/AppProvider';
 import { arrowRight } from '../../Icons/arrowRight';
 import { blocked } from '../../Icons/blocked';
 import { dislike } from '../../Icons/dislike';
@@ -18,6 +18,7 @@ const profileBlockText = (className, text, icon = false, checkbox = false, ref =
 };
 
 export default function RightPanelOpenProfile() {
+  const appContext = useApp();
   const {
     chats,
     contacts,
@@ -26,7 +27,7 @@ export default function RightPanelOpenProfile() {
     setContacts,
     setOpenedChatID,
     setActionRightPanel,
-  } = useContext(Context);
+  } = appContext;
   const muteContactLink = useRef(null);
 
   const user = contacts.find((contact) => contact.id === openedChatID);

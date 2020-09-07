@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
-import { Context } from '../../../context/AppContext';
+import * as React from 'react';
 
+import { useApp } from '../../../context/AppProvider';
 import { statusMessageIcon } from '../../Icons/statusMessageIcon';
 
 export default function RightPanelMessage({ message }) {
-  const { setSelectMessage } = useContext(Context);
+  const appContext = useApp();
+  const { setSelectMessage } = appContext;
 
   /* Выюор сообщения в поиске */
   const findMessage = () => {

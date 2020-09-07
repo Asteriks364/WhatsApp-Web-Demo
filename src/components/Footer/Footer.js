@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Context } from '../../context/AppContext';
+import React, { useEffect, useState } from 'react';
 
+import { useApp } from '../../context/AppProvider';
 import { emojiIcon } from '../Icons/emojiIcon';
 import { sendIcon } from '../Icons/sendIcon';
 import { voiceIcon } from '../Icons/voiceIcon';
@@ -8,7 +8,8 @@ import Link from '../Link/Link';
 import './Footer.css';
 
 export default function Footer() {
-  const { chats, openedChatID, sendMessageChat, writeNewMessageChat } = useContext(Context);
+  const appContext = useApp();
+  const { chats, openedChatID, sendMessageChat, writeNewMessageChat } = appContext;
 
   const newMessage = chats.find((chat) => chat.id === openedChatID).newMessage;
   const [message, setMessage] = useState(newMessage);
