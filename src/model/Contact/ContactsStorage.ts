@@ -6,7 +6,13 @@ export class ContactsStorage {
 
   public constructor() {
     this._contacts = contacts.map((contact) => {
-      return new Contact(contact.id, contact.name, contact.avatar, contact.lastVisit);
+      return new Contact(
+        contact.id,
+        contact.name,
+        contact.avatar,
+        contact.lastVisit,
+        (contact.files = []),
+      );
     });
   }
 
@@ -14,8 +20,8 @@ export class ContactsStorage {
     return this._contacts;
   }
 
-  public sendMessage(openedChatID: number | undefined | boolean) {
-    this._contacts
+  public sendMessage(contacts: Array<Contact>, openedChatID: boolean | number | undefined) {
+    return contacts
       .filter((contact) => contact.id === openedChatID)
       .concat(this._contacts.filter((contact) => contact.id !== openedChatID));
   }

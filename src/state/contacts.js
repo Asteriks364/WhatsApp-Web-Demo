@@ -4,6 +4,7 @@ export const contacts = [
     name: 'Lupe Rutherford',
     avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/dc_user/128.jpg',
     lastVisit: 'вчера в 20:10',
+    files: [],
   },
   {
     id: 2,

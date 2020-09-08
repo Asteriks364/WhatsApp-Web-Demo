@@ -1,14 +1,14 @@
 @media all {
-	.user {
+	.profile {
 		display: flex;
 	}
 
-	.user__avatar {
+	.profile__avatar {
 		position: relative;
 		overflow: hidden;
 	}
 
-	.user__info {
+	.profile__info {
 		display: flex;
 		flex-direction: column;
 		flex-grow: 1;
@@ -17,7 +17,7 @@
 		padding-left: 15px;
 	}
 
-	.user__name {
+	.profile__name {
 		display: inline-block;
 		position: relative;
 		flex-grow: 1;
@@ -27,7 +27,7 @@
 		color: var(--primary-strong);
 	}
 
-	.user__visit {
+	.profile__visit {
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;

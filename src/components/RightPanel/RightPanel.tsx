@@ -1,20 +1,25 @@
 import * as React from 'react';
 
 import { useApp } from '../../context/AppProvider';
+
 import { buttonClose } from '../Icons/buttonClose';
-import RightPanelSearchMessage from './RightPanelContent/RightPanelSearchMessage';
-import RightPanelOpenProfile from './RightPanelContent/RightPanelOpenProfile';
+import { RightPanelSearchMessage } from './RightPanelContent/RightPanelSearchMessage';
+import { RightPanelOpenProfile } from './RightPanelContent/RightPanelOpenProfile';
+
 import './RightPanel.css';
 
-export default function RightPanel() {
+export const RightPanel = (): JSX.Element => {
   const appContext = useApp();
   const { actionRightPanel, setActionRightPanel } = appContext;
 
   /* Закрытие правой панели */
-  const closePanel = () => setActionRightPanel(false);
+  const closePanel = React.useCallback(
+    (e: React.MouseEvent<HTMLButtonElement>) => setActionRightPanel(false),
+    [setActionRightPanel],
+  );
 
   /* Заголовок правой панели */
-  const headerTitle = () => {
+  const headerTitle: () => string | boolean = () => {
     switch (actionRightPanel) {
       case 'searchMessage':
         return 'Поиск сообщений';
@@ -26,7 +31,7 @@ export default function RightPanel() {
   };
 
   /* Контент правой панели */
-  const panelContent = () => {
+  const panelContent: () => JSX.Element | boolean = () => {
     switch (actionRightPanel) {
       case 'searchMessage':
         return <RightPanelSearchMessage />;
@@ -52,4 +57,4 @@ export default function RightPanel() {
       )}
     </div>
   );
-}
+};

@@ -18,24 +18,23 @@ export class ChatsStorage {
     return this._chats;
   }
 
-  private static formatData(num: string | number) {
+  private static formatData(num: string | number): string | number {
     return num < 10 ? '0' + num : num;
   }
 
-  public open(id: ((prevState: number | boolean) => number | boolean) | number | boolean) {
-    this._chats.map(
-      (chat: {
-        id: number | boolean | ((prevState: number | boolean) => number | boolean);
-        isOpen: boolean;
-      }) => {
-        chat.id === id ? (chat.isOpen = true) : (chat.isOpen = false);
-        return chat;
-      },
-    );
+  public open(chats: Array<Chat>, id: number | undefined) {
+    return chats.map((chat) => {
+      chat.id === id ? (chat.isOpen = true) : (chat.isOpen = false);
+      return chat;
+    });
   }
 
-  public writeNewMessage(message: string, openedChatID: number | undefined | boolean) {
-    this._chats.map((chat) => {
+  public writeNewMessage(
+    chats: Array<Chat>,
+    message: string,
+    openedChatID: boolean | number | undefined,
+  ) {
+    return chats.map((chat) => {
       if (chat.id === openedChatID) {
         chat.newMessage = message;
       }
@@ -43,8 +42,12 @@ export class ChatsStorage {
     });
   }
 
-  public sendMessage(message: string, openedChatID: number | undefined | boolean) {
-    this._chats.map((chat) => {
+  public sendMessage(
+    chats: Array<Chat>,
+    message: string,
+    openedChatID: boolean | number | undefined,
+  ) {
+    return chats.map((chat) => {
       if (chat.id === openedChatID) {
         const newMessage = {
           id: Math.floor(Math.random() * Math.floor(999999)),
@@ -53,18 +56,11 @@ export class ChatsStorage {
           time: this.arDate.join(':'),
           isRead: false,
         };
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
+
+        if (!chat.messages) chat.messages = [];
         chat.messages.push(newMessage);
       }
       return chat;
     });
-    this.sortChats(openedChatID);
-  }
-
-  public sortChats(openedChatID: number | boolean | undefined) {
-    this._chats
-      .filter((chat) => chat.id === openedChatID)
-      .concat(this._chats.filter((chat) => chat.id !== openedChatID));
   }
 }

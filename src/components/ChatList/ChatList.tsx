@@ -1,21 +1,24 @@
 import * as React from 'react';
 
 import { useApp } from '../../context/AppProvider';
-import Chat from '../Chat/Chat';
+import { Contact } from '../../model/Contact/Contact';
+
+import { ChatItem } from '../ChatItem/ChatItem';
+
 import './ChatList.css';
 
-export default function ChatList({ search }) {
+export const ChatList = (props: { search: string }): JSX.Element => {
   const appContext = useApp();
   const { contacts, chats } = appContext;
 
-  let filterContacts = contacts.filter(
-    (contact) => contact.name.toLowerCase().indexOf(search.toLowerCase().trim()) !== -1,
+  const filterContacts: Contact[] = contacts.filter(
+    (contact) => contact.name.toLowerCase().indexOf(props.search.toLowerCase().trim()) !== -1,
   );
 
   return (
     <div className="chat-list">
       {filterContacts.map((contact) => (
-        <Chat
+        <ChatItem
           key={contact.id}
           chat={chats.find((chat) => contact.id === chat.id)}
           contact={contact}
@@ -23,4 +26,4 @@ export default function ChatList({ search }) {
       ))}
     </div>
   );
-}
+};

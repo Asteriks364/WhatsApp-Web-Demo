@@ -137,11 +137,11 @@
 		padding: 14px 30px 10px;
 	}
 
-	.contact-profile .user {
+	.contact-profile .profile {
 		display: block;
 	}
 
-	.contact-profile .user__avatar {
+	.contact-profile .profile__avatar {
 		display: flex;
 		justify-content: center;
 		margin-bottom: 20px;
@@ -152,19 +152,19 @@
 		border-radius: 50%;
 	}
 
-	.contact-profile .user__name {
+	.contact-profile .profile__name {
 		font-size: 19px;
 		line-height: 28px;
 		margin-bottom: 3px;
 	}
 
-	.contact-profile .user__visit {
+	.contact-profile .profile__visit {
 		color: var(--secondary-lighter);
 		font-size: 14px;
 		line-height: 20px;
 	}
 
-	.contact-profile .user__info {
+	.contact-profile .profile__info {
 		padding: 0;
 	}
 
