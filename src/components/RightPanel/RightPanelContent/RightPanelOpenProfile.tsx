@@ -1,23 +1,31 @@
-import React, { useRef } from 'react';
+import * as React from 'react';
 
 import { useApp } from '../../../context/AppProvider';
+import { Contact } from '../../../model/Contact/Contact';
+
 import { arrowRight } from '../../Icons/arrowRight';
 import { blocked } from '../../Icons/blocked';
 import { dislike } from '../../Icons/dislike';
 import { trash } from '../../Icons/trash';
-import User from '../../User/User';
+import { Profile } from '../../Profile/Profile';
 
-const profileBlockText = (className, text, icon = false, checkbox = false, ref = null) => {
+const profileBlockText = (
+  className: string | undefined,
+  text: string | null | undefined,
+  icon?: JSX.Element | false,
+  checkbox = false,
+  ref: React.RefObject<any> | null = null,
+) => {
   return (
     <div className={className} ref={ref}>
       <span className="title">{text}</span>
-      {checkbox && <span className="checkbox"></span>}
+      {checkbox && <span className="checkbox" />}
       {icon && <span className="icon">{icon}</span>}
     </div>
   );
 };
 
-export default function RightPanelOpenProfile() {
+export const RightPanelOpenProfile = (): JSX.Element => {
   const appContext = useApp();
   const {
     chats,
@@ -28,41 +36,42 @@ export default function RightPanelOpenProfile() {
     setOpenedChatID,
     setActionRightPanel,
   } = appContext;
-  const muteContactLink = useRef(null);
 
-  const user = contacts.find((contact) => contact.id === openedChatID);
+  const muteContactLink = React.useRef<HTMLDivElement>(null);
+
+  const contact: Contact | undefined = contacts.find((contact) => contact.id === openedChatID);
 
   /* Режим без звука для этого чата */
-  const muteContact = () => {
-    muteContactLink.current.classList.toggle('checked');
-    /* Нужно доватить свойство isMuted в объект контакта */
-  };
+  const muteContact = React.useCallback(() => {
+    if (muteContactLink.current !== null) muteContactLink.current.classList.toggle('checked');
+    /* Нужно добавить свойство isMuted в объект контакта */
+  }, []);
 
-  const openFavoritesMessages = () => {
+  const openFavoritesMessages = React.useCallback(() => {
     alert('Открыть Избранные сообщения');
     /* Нужно доватить объект с избранными сообщениями в объект контакта */
-  };
+  }, []);
 
-  const blockedContact = () => {
+  const blockedContact = React.useCallback(() => {
     alert('Заблокировать контакт');
     /* Нужно доватить свойство isBlocked в объект контакта */
-  };
+  }, []);
 
-  const complainContact = () => {
+  const complainContact = React.useCallback(() => {
     alert('Пожаловаться на контакт');
-  };
+  }, []);
 
-  const deletedContact = () => {
+  const deletedContact = React.useCallback(() => {
     setActionRightPanel(false);
-    setOpenedChatID(false);
+    setOpenedChatID(-1);
     setChats(chats.filter((chat) => chat.id !== openedChatID));
     setContacts(contacts.filter((contact) => contact.id !== openedChatID));
-  };
+  }, [chats, contacts, openedChatID, setActionRightPanel, setChats, setContacts, setOpenedChatID]);
 
   return (
     <div className="contact-profile">
       <div className="contact-profile__block contact-profile__block_big-padding">
-        <User user={user} props={true} avatarSize="big" />
+        {contact && <Profile profile={contact} profileContact avatarSize="big" />}
       </div>
 
       <div className="contact-profile__block contact-profile__block_min-padding">
@@ -70,13 +79,13 @@ export default function RightPanelOpenProfile() {
           {profileBlockText('contact-profile__link', 'Медиа, ссылки и документы', arrowRight())}
           <div
             className={
-              !contacts.files || contacts.files.length === 0
+              contact && (!contact.files || contact.files.length === 0)
                 ? 'file-list file-list_empty'
                 : 'file-list'
             }
           >
-            {contacts.files && contacts.files.length !== 0 ? (
-              <div></div>
+            {contact && contact.files && contact.files.length !== 0 ? (
+              <div>files</div>
             ) : (
               <span>Медиа, ссылки и документы отсутствуют</span>
             )}
@@ -120,4 +129,4 @@ export default function RightPanelOpenProfile() {
       </div>
     </div>
   );
-}
+};

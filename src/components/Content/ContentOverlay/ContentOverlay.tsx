@@ -1,7 +1,8 @@
-import React from 'react';
+import * as React from 'react';
+
 import { contentOverlayImg } from '../../Icons/contentOverlayImg';
 
-export default function ContentOverlay() {
+export const ContentOverlay = (): JSX.Element => {
   return (
     <div className="content__overlay">
       <div className="content__overlay-wrap">
@@ -33,4 +34,4 @@ export default function ContentOverlay() {
       </div>
     </div>
   );
-}
+};

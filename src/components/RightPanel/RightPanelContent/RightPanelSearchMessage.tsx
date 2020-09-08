@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import * as React from 'react';
 
-import Search from '../../Search/Search';
-import RightPanelMessageList from './RightPanelMessageList';
+import { Search } from '../../Search/Search';
+import { RightPanelMessageList } from './RightPanelMessageList';
 
-export default function RightPanelSearchMessage() {
+export const RightPanelSearchMessage = (): JSX.Element => {
   /* строка поиска по сообщениям */
-  const [searchMessage, setSearchMessage] = useState('');
+  const [searchMessage, setSearchMessage] = React.useState<string>('');
 
   return (
     <div className="search-message">
@@ -13,4 +13,4 @@ export default function RightPanelSearchMessage() {
       <RightPanelMessageList searchMessage={searchMessage} />
     </div>
   );
-}
+};
